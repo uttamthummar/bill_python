@@ -3,10 +3,10 @@ person=[]
 
 def catagory():
   global catagory_arr
-  for i in range(0,len(catagory_arr)):
-    print("press",i,"for" ,catagory_arr[i])
+  for i in range(1,4):
+    print("press",i,"for" ,catagory_arr[i-1])
   choice=int(input("enter catagory of items:"))
-  items(choice)
+  items(choice-1)
 
 def items(c):
   for key in catagory_arr:
@@ -58,7 +58,7 @@ def print_list():
   for i in range(0,len(person)):
     print(i+1,"\t",person[i][0],"\t",person[i][1],"\t",person[i][2],"\t",person[i][3] )
     print("----------------------------------")
-    total_bill_am()
+  total_bill_am()
 
 def edit():
   print_list()

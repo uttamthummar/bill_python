@@ -1,5 +1,6 @@
 winner=1
-currunt_player="O"
+i=0
+k=1
 def print_box():
   for i in range(len(box)):
     for j in range(len(box[i])):
@@ -7,17 +8,20 @@ def print_box():
     print()
 
 def player_choice():
-  k=0
+  global i,k
   choice_row=int(input("enter positions of row"))
   choice_col=int(input("enter positions of col"))
-  global currunt_player
-  if(i%2==0):
-    box[choice_row][choice_col]="O"
-    print_box()
+  if(box[choice_row][choice_col]==1):
+    if(i%2==0):
+      box[choice_row][choice_col]="O"
+      print_box()
+    else:
+      box[choice_row][choice_col]="X"
+      print_box()
   else:
-    box[choice_row][choice_col]="X"
-    print_box()
-
+    print("enter valid choice")
+    i-=1
+    k-=1
 
 def win():
   global winner
@@ -52,4 +56,3 @@ while(i<9 and winner!=0):
     break
   if i==9 and winner!=0:
     print("draw")
-
